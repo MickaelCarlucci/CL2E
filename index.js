@@ -1,4 +1,6 @@
-import dotenv from "dotenv";
+import dotenv from 'dotenv';
+dotenv.config();
+
 import {createServer} from "node:http";
 
 import expressApp from "./app/index.app.js";
