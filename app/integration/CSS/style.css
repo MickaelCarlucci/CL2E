@@ -1,0 +1,21 @@
+.text-red {
+    color: #e44c41;
+}
+
+.text-yellow {
+    color: #faab10;
+}
+
+.text-blue {
+    color: #01acc6;
+}
+
+.text-dark-grey {
+    color: #3d3835;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
