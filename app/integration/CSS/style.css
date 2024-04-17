@@ -1,21 +1,129 @@
-.text-red {
-    color: #e44c41;
-}
-
-.text-yellow {
-    color: #faab10;
-}
-
-.text-blue {
-    color: #01acc6;
-}
-
-.text-dark-grey {
-    color: #3d3835;
-}
-
 body {
     display: flex;
     flex-direction: column;
     align-items: center;
+    gap: 2em;
+    font-size: 2rem;
+    background-color: #ffffff;
+}
+
+.header {
+background-color:#3d3835;
+width: 94%;
+padding-bottom: 1%;
+box-shadow: 10px 10px 12px #faab10;
+border-radius: 1em;
+}
+
+.nav-button {
+    transition: all 0.3s ease;
+}
+
+.nav-button:hover {
+    font-size: 1.2em;
+    color: #faab10;
+}
+
+h1 {
+    font-size: 4rem;
+}
+
+.rainbow-text {
+    text-align: center;
+}
+
+.rainbow-text span:nth-child(1) {
+    color: #faab10; 
+}
+
+.rainbow-text span:nth-child(2) {
+    color: #01acc6; 
+}
+
+.rainbow-text span:nth-child(3) {
+    color: #e44c41;
+}
+
+.rainbow-text span:nth-child(4) {
+    color: #faab10;
+}
+
+nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 1em
+    
+}
+
+nav a {
+    text-decoration: none;
+    color: white;
+}
+
+.main {
+    background-color: #3d3835;
+    width: 90%;
+    height: 90%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 1em;
+    padding: 2%;
+    box-shadow: 10px 10px 12px #01acc6;
+    border-radius: 1em;
+}
+
+.image {
+    width: 41%;
+    text-align: center;
+}
+
+.image img {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.main p {
+    font-size: 0.8em;
+}
+
+.prestation {
+    width: 41%;
+    color: white;
+    text-align: center;
+}
+
+h2 {
+    font-size: 1em;
+    margin-bottom: 3%;
+}
+
+footer {
+    text-align: center;
+    font-size: 0.8em;
+    background-color: #3d3835;
+    width: 90%;
+    color: #ffffff;
+    padding: 2%;
+    box-shadow: 10px 10px 12px #e44c41;
+    border-radius: 1em;
+    margin-bottom: 2%;
+}
+
+footer p {
+    margin: 1%
+}
+
+#contact {
+    text-decoration: none;
+    color: white;
+    font-style: italic;
+    transition: all 0.3s ease;
+}
+
+#contact:hover {
+    font-size: 1.2em;
+    color: #e44c41;
 }

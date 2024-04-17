@@ -5,5 +5,6 @@ const router = express.Router();
 
 
 router.get('/', mainController.homePage);
+router.get('/contact', mainController.contact);
 
 export default router;
