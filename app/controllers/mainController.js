@@ -1,4 +1,8 @@
-import sgMail from "@sendgrid/mail";
+import transporter from "../utils/conf.mailgun.js";
+import dotenv from 'dotenv';
+dotenv.config();
+
+
 
 const mainController = {
 homePage: (request, response) => {
@@ -9,26 +13,28 @@ contact: (request, response) => {
     response.render('contact.ejs')
 },
 
-sendEmail: (request, response) => {
-    const { name, email, message } = request.body;
-    const mailOptions = {
-        to: 'frewmike17@gmail.com',
-        from: email,
-        subject: `Vous avez reçu un nouveau message de ${name}`,
-        text: `${message}\n\n--\n${name}\n${email}`,
-    };
-      // Envoi de l'e-mail via SendGrid
-  sgMail.send(mailOptions)
-  .then(() => {
-    console.log('E-mail envoyé avec succès');
-    res.status(200).send('E-mail envoyé avec succès');
-  })
-  .catch((error) => {
-    console.error('Erreur lors de l\'envoi de l\'e-mail :', error.response.body);
-    res.status(500).send('Erreur lors de l\'envoi de l\'e-mail');
-  });
+sendMail: async (request, response) => {
 
+  const { name, email, message } = request.body;
+ // Envoyer un e-mail avec Mailgun et Nodemailer
+
+const mailOptions = {
+  from: process.env.MAIL,
+  to: `${email}`,
+  subject: `Nouveau message de ${name}`,
+  text: `${message}\n\n--\n${name}\n${email}`
+};
+
+transporter.sendMail(mailOptions, (error, info) => {
+  if (error) {
+    console.error('Error sending email:', error);
+  } else {
+    console.log('Email sent:', info);
+  }
+}); 
+response.redirect('/contact')
 }
+
 }
 
 export default mainController;
