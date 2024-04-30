@@ -16,11 +16,12 @@ contact: (request, response) => {
 sendMail: async (request, response) => {
 
   const { name, email, message } = request.body;
+  
  // Envoyer un e-mail avec Mailgun et Nodemailer
 
 const mailOptions = {
-  from: process.env.MAIL,
-  to: `${email}`,
+  from: `${email}`,
+  to: process.env.MAIL,
   subject: `Nouveau message de ${name}`,
   text: `${message}\n\n--\n${name}\n${email}`
 };
