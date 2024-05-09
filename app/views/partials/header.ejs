@@ -6,6 +6,29 @@
     <title>Plombier</title>
     <link rel="stylesheet" href="/css/reset.css">
     <link rel="stylesheet" href="/css/style.css">
+
+    <script>document.addEventListener('DOMContentLoaded', function() {
+        const toast = document.getElementById('toast');
+        const closeBtn = document.getElementById('close-toast');
+      
+        closeBtn.addEventListener('click', function() {
+          toast.classList.add('hidden');
+        });
+      
+        // Fonction pour afficher le toast
+        function showToast(message) {
+          console.log('exécution de la fonction');
+          const toastMessage = document.getElementById('toast-message');
+          toastMessage.innerText = message;
+          toast.classList.remove('hidden');
+          setTimeout(function() {
+            toast.classList.add('hidden');
+          }, 3000); // Fermer automatiquement le toast après 3 secondes
+        }
+      
+        // Exemple d'utilisation :
+        // showToast('Ceci est un message de toast !');
+      });</script>
 </head>
 <body>
     <header class="header">

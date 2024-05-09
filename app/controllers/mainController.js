@@ -10,13 +10,14 @@ response.render('home.ejs')
 },
 
 contact: (request, response) => {
-    response.render('contact.ejs')
+  const errorMessage = request.session.errorMessage; // Récupérer le message d'erreur de la session
+  response.render('contact.ejs', { errorMessage });
 },
 
 sendMail: async (request, response) => {
 
   const { name, email, message } = request.body;
-  
+
  // Envoyer un e-mail avec Mailgun et Nodemailer
 
 const mailOptions = {
@@ -29,6 +30,8 @@ const mailOptions = {
 transporter.sendMail(mailOptions, (error, info) => {
   if (error) {
     console.error('Error sending email:', error);
+    const errorMessage = {message: 'Votre mail est erroné'}
+    request.session.errorMessage = errorMessage
   } else {
     console.log('Email sent:', info);
   }

@@ -1,5 +1,6 @@
 //Tous les imports nécessaires
-import express from 'express';
+import express from "express";
+import session from "express-session"
 import router from "./routers/router.js";
 //fileUrlToPath sert a utiliser ensuite a configurer le filename pour configurer le path avec EJS (nécessaire en ES6)
 import { fileURLToPath } from 'url';
@@ -11,6 +12,11 @@ const __dirname = path.dirname(__filename);
 
 const app = express();
 
+app.use(session({
+    secret: process.env.SECRET_SESSION, 
+    resave: false,
+    saveUninitialized: true
+  }));
 app.use(express.urlencoded({ extended: true }));
 app.set('views', path.join(__dirname,'views'));
 app.set('view engine', 'ejs');

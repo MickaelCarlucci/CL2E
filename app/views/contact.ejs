@@ -14,6 +14,19 @@
                 <button id="button">Envoyez</button>
             </div>
         </form>
-
+        <% if (errorMessage) { %>
+            <script>
+                document.addEventListener('DOMContentLoaded', function() {
+                    showToast('<%= errorMessage.message %>');
+                    console.log(errorMessage.message);
+                });
+            </script>
+        <% } %>
+        
+        <!-- Votre élément de toast -->
+        <div id="toast" class="hidden">
+            <span id="toast-message"></span>
+            <button id="close-toast">Fermer</button>
+        </div>
     </main>
     <%- include('./partials/footer.ejs') %>
