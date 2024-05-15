@@ -1,40 +1,36 @@
 <!DOCTYPE html>
 <html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Plombier</title>
-    <link rel="stylesheet" href="/css/reset.css">
-    <link rel="stylesheet" href="/css/style.css">
 
-    <script>document.addEventListener('DOMContentLoaded', function() {
-        const toast = document.getElementById('toast');
-        const closeBtn = document.getElementById('close-toast');
-      
-        closeBtn.addEventListener('click', function() {
-          toast.classList.add('hidden');
-        });
-      
-        // Fonction pour afficher le toast
-        function showToast(message) {
-          console.log('exécution de la fonction');
-          const toastMessage = document.getElementById('toast-message');
-          toastMessage.innerText = message;
-          toast.classList.remove('hidden');
-          setTimeout(function() {
-            toast.classList.add('hidden');
-          }, 3000); // Fermer automatiquement le toast après 3 secondes
-        }
-      
-        // Exemple d'utilisation :
-        // showToast('Ceci est un message de toast !');
-      });</script>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CL2E</title>
+  <link rel="stylesheet" href="/css/reset.css">
+  <link rel="stylesheet" href="/css/style.css">
+
+  <link rel="icon-nav" sizes="16x16" href="/favicons/apple-icon-57x57.png" />
+  <link rel="IE9-icon" sizes="24x24" href="/favicons/apple-icon-57x57.png" />
+  <link rel="icon-nav" sizes="32x32" href="/favicons/apple-icon-57x57.png" />
+  <link rel="android-icon" sizes="48x48" href="/favicons/apple-icon-57x57.png" />
+  <link rel="oldIphone-icon" sizes="57x57" href="/favicons/apple-icon-57x57.png" />
+  <link rel="iphone-icon" sizes="60x60" href="/favicons/apple-icon-57x57.png" />
+  <link rel="iPad-accueil-icon" sizes="72x72" href="/favicons/apple-icon-57x57.png" />
+  <link rel="googleTV-icon" sizes="96x96" href="/favicons/apple-icon-57x57.png" />
+  <link rel="iphone4" sizes="114x114" href="/favicons/apple-icon-57x57.png" />
+  <link rel="chrome-webstore-icon" sizes="128x128" href="/favicons/apple-icon-57x57.png" />
+  <link rel="iPad-icon" sizes="167x167" href="/favicons/apple-icon-57x57.png" />
+  <link rel="opera-icon" sizes="195x195" href="/favicons/apple-icon-57x57.png" />
+
+
+
 </head>
+
 <body>
-    <header class="header">
-        <h1 class="rainbow-text"><span>C</span><span>L</span><span>2</span><span>E</span></h1>
-        <nav class="nav">
-            <div><a class="nav-button" href="/">Prestations</a></div>
-            <div><a class="nav-button" href="/contact">Contactez-moi</a></div>
-        </nav>
-    </header>
+  <header class="header">
+    <h1 class="rainbow-text"><span>C</span><span>L</span><span>2</span><span>E</span></h1>
+    <nav class="nav">
+      <div><a class="nav-button" href="/">Prestations</a></div>
+      <div><a class="nav-button" href="/contact">Contactez-moi</a></div>
+    </nav>
+
+  </header>

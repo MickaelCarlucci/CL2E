@@ -10,8 +10,8 @@ response.render('home.ejs')
 },
 
 contact: (request, response) => {
-  const errorMessage = request.session.errorMessage; // Récupérer le message d'erreur de la session
-  response.render('contact.ejs', { errorMessage });
+
+  response.render('contact.ejs');
 },
 
 sendMail: async (request, response) => {
@@ -30,13 +30,18 @@ const mailOptions = {
 transporter.sendMail(mailOptions, (error, info) => {
   if (error) {
     console.error('Error sending email:', error);
-    const errorMessage = {message: 'Votre mail est erroné'}
-    request.session.errorMessage = errorMessage
+
+    response.render('contact', {
+      error: 'Votre mail est erroné'
+    });
+
   } else {
     console.log('Email sent:', info);
+
+    response.redirect('/contact')
   }
 }); 
-response.redirect('/contact')
+
 }
 
 }

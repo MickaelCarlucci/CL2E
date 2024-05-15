@@ -12,15 +12,11 @@ const __dirname = path.dirname(__filename);
 
 const app = express();
 
-app.use(session({
-    secret: process.env.SECRET_SESSION, 
-    resave: false,
-    saveUninitialized: true
-  }));
 app.use(express.urlencoded({ extended: true }));
 app.set('views', path.join(__dirname,'views'));
 app.set('view engine', 'ejs');
 app.use(express.static('app/integration'));
+
 app.use(router);
 
 export default app;

@@ -1,24 +1,64 @@
-<%- include('./partials/header.ejs') %>
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CL2E</title>
+    <link rel="stylesheet" href="/css/reset.css">
+    <link rel="stylesheet" href="/css/style.css">
+
+    <script>document.addEventListener('DOMContentLoaded', function() {
+        const toast = document.getElementById('toast');
+        const closeBtn = document.getElementById('close-toast');
+      
+        closeBtn.addEventListener('click', function() {
+          toast.classList.add('hidden');
+        });
+      
+        // Fonction pour afficher le toast
+        function showToast(message) {
+          console.log('exécution de la fonction');
+          const toastMessage = document.getElementById('toast-message');
+          toastMessage.innerText = message;
+          toast.classList.remove('hidden');
+          setTimeout(function() {
+            toast.classList.add('hidden');
+          }, 3000); // Fermer automatiquement le toast après 3 secondes
+        }
+      
+        // Exemple d'utilisation :
+        // showToast('Ceci est un message de toast !');
+      });</script>
+</head>
+<body>
+    <header class="header">
+        <h1 class="rainbow-text"><span>C</span><span>L</span><span>2</span><span>E</span></h1>
+        <nav class="nav">
+            <div><a class="nav-button" href="/">Prestations</a></div>
+            <div><a class="nav-button" href="/contact">Contactez-moi</a></div>
+        </nav>
+    </header>
     <main class="contact-page">
 
         <form class="form" action="/send-email" method="post">
-            <div>
+            <div class="contact-text">
                 <h2>Contactez-moi</h2>
                 <p>Vous pouvez me contacter sur le 07 66 77 96 44 pour tout renseignement ou alors par mail en me laissant un message via le formulaire qui suit.</p>
             </div>
 
-            <div>
+            <div class="contact-form">
                 <input type="text" id="name" name="name" placeholder="Votre nom et prénom" required>
                 <input type="text" id="email" name="email" placeholder="Votre adresse mail" required>
                 <textarea name="message" id="message" cols="100" rows="20" placeholder="N'hésitez pas à me laisser votre numéro de téléphone si vous préférez que je vous recontacte par téléphone." required></textarea>
-                <button id="button">Envoyez</button>
+                <button class="button" id="button">Envoyez</button>
             </div>
         </form>
-        <% if (errorMessage) { %>
+        
+        <% if (locals.error) { %>
+            <% console.log(error) %>
             <script>
                 document.addEventListener('DOMContentLoaded', function() {
-                    showToast('<%= errorMessage.message %>');
-                    console.log(errorMessage.message);
+                    showToast('<%= error %>');
                 });
             </script>
         <% } %>
