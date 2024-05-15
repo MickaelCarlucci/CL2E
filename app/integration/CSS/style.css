@@ -4,7 +4,21 @@ body {
     align-items: center;
     gap: 2em;
     font-size: 2rem;
-    background-color: #ffffff;
+}
+
+body::before {
+    content: ""; /* Obligatoire pour une pseudo-classe */
+    background-image: url(/images/plombier-background.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    opacity: 0.8; /* Ajustez la valeur entre 0 et 1 pour contrôler la transparence */
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: -1; /* Assurez-vous que la pseudo-classe est en arrière-plan */ 
 }
 
 .header {
@@ -267,6 +281,14 @@ footer p {
   @media screen and (max-width: 890px) {
     body {
         font-size: 1.3rem;
+    }
+
+    .main{
+    display: flex;
+    flex-direction: column;
+    }
+    .prestation {
+    width: 70%;
     }
     .contact-form {
 
