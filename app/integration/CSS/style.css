@@ -25,8 +25,15 @@ body::before {
 background-color:#3d3835;
 width: 94%;
 padding-bottom: 1%;
+margin: 1%;
+text-align: center;
 box-shadow: 10px 10px 12px #faab10;
 border-radius: 1em;
+}
+
+.logo{
+  max-width: 10%; /* Limite la largeur maximale à 100% du conteneur parent */
+  height: auto; /* Maintenir le ratio d'aspect de l'image */
 }
 
 .nav-button {
@@ -38,9 +45,6 @@ border-radius: 1em;
     color: #faab10;
 }
 
-h1 {
-    font-size: 4rem;
-}
 
 .rainbow-text {
     text-align: center;
@@ -133,7 +137,7 @@ input {
   }
   
   input:focus {
-    background-color: rgb(234, 226, 226);
+    background-color: #ffffff;
     transform: scale(1.05);
     box-shadow: 13px 13px 100px #969696,
                -13px -13px 100px #ffffff;
@@ -147,6 +151,11 @@ input {
     margin: 0.5%;
     background-color: white;
     box-shadow: inset 2px 5px 10px rgba(0,0,0,0.3);
+  }
+
+  .message-error {
+    margin: 1%;
+    color: red;
   }
 
   .button {
